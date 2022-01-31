@@ -1,0 +1,993 @@
+/* PAGRINDINIAI PARAMETRAI */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+}
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+section > .container {
+    padding: 10px 0;
+}
+
+/* TOP HEADER */
+.top-header {
+    background-color: #252323;
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 999;
+}
+
+.top-header > .flex-container {
+    align-items: center;
+    justify-content: space-between;
+}
+.logo a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.logo p {
+    font-size: 1.5625rem;
+    margin: 0;
+    padding: 26px 0;
+}
+
+.logo {
+    font-family: 'Pacifico', cursive;
+    font-weight: 200;
+}
+
+.logo span {
+    color: #00bac6;
+}
+
+.social a > i {
+    padding: 14px;
+    font-size: 1.5625rem;
+    color: #fff;
+}
+
+.social .fa-rss:hover {
+    color: #ee802f;
+}
+
+.social .fa-facebook-f:hover {
+    color: #4267B2;
+}
+
+.social .fa-twitter:hover {
+    color: #1DA1F2;
+}
+
+.social .fa-linkedin-in:hover {
+    color: #2867B2;
+}
+/* TOP HEADER END */
+
+/* NAVIGACIJA */
+.main-nav > .container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav {
+    display: block;
+    position: fixed;
+    z-index: 998;
+    padding-top: 85px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.main-nav::after {
+    background-color: #efefef;
+    content: "";
+    width: 100%;
+    height: 5px;
+    top: 163px;
+    position: fixed;
+  }
+
+.main-nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menu li {
+  float: left;
+  position: relative;
+  overflow: hidden;
+}
+
+.main-nav li a {   
+    display: block;
+    padding: 30px 16px;
+    text-decoration: none;
+    color: gray;   
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main-nav li::after {
+    background-color: #00bac6;
+    content: "";
+    width: 0;
+    height: 3px;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+}
+  
+.main-nav li:hover::after {
+    width: 100%;
+}
+
+.main-nav li a:hover {
+    color: #00bac6;
+}
+
+  /* kad butu aktyvus atidarytas puslapis menu */
+.main-nav .active::after {
+    width: 100%;
+}
+
+.main-nav .active a {
+    color: #00bac6;
+}
+
+.main-nav a > i {
+    padding: 14px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.call a {
+    font-size: 1.125rem;
+    letter-spacing: 0.02em;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: #00bac6;
+    padding: 15px 30px 10px;
+    border-radius: 5px;
+    border-bottom: 4px solid #008d96;
+    margin-top: 40px; 
+}
+
+.call a:hover {
+    background-color: #00a5b0;
+    font-weight: 700;
+}
+/* NAVIGACIJA END */
+
+/* baneris */
+.main-banner {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding-top: 157px;
+}
+
+.main-banner h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.main-banner p {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.main-banner img {
+    width: 100%;
+    height: 600px;
+    filter: brightness(50%);
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%;
+    max-width: 980px;;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tekstas {
+    max-width: 700px;
+}
+
+.banner-slides {
+    display: none
+}
+
+/* Next & previous mygtukai main baneryje */
+.prev, .next {
+    cursor: pointer;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    transition: 0.6s ease;
+    border-radius: 3px;
+    user-select: none;
+    font-size: 4rem;
+}
+
+/* užvedu su pele uzsideda fonas ant mygtuku */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.activedot, .dot:hover {
+    background-color: #717171;
+}
+
+/* Fading animacija */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+/* baneris end */
+
+.services {
+    background-color: #fff; 
+    margin: auto 20px;
+}
+
+.section-heading {
+    text-align: center;
+}
+
+.section-heading > h2 {
+    font-size: 1.875rem;
+    color: #646464;
+}
+
+.section-heading > p {
+    font-size: 0.9rem;
+}
+
+.services-content {
+    padding: 20px 0;
+    justify-content: space-around;  
+    text-align: center;
+}
+
+.services-content .info {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.services-content .info h3 {
+    color: #7b7b7b;
+}
+
+.services-content .info p {
+    font-size: 0.9rem;
+}
+
+.services-content .info > i {
+    font-size: 8rem;
+    color: grey;
+}
+
+.services-content .info .fa-fire:hover {
+    color: red;
+}
+
+.services-content .info .active {
+    color: #00bac6;
+}
+
+.services-content .info .fa-money-bill-alt:hover {
+    color: green;
+}
+
+.services-content .info:nth-child(2) {
+    padding-top: 50px;
+}
+
+/* patarimai */
+
+.patarimai {
+    background-color: #eeeeee;
+}
+
+.patarimai-heading h2 {
+    font-size: 1.875rem;
+    text-align: center;
+    color: #646464;
+}
+
+.patarimai-heading h2:after {
+    content: "";
+    display: block;
+    width: 90px;
+    border-top: 4px solid #c5c5c5;
+    margin: 22px auto;
+}
+
+.patarimai-content{
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.galery-patarimai {
+    width: calc(33.33333% - 17px);
+    min-width: 309px;
+    margin-bottom: 20px;
+    border: 1px solid #c5c5c5;
+}
+
+.galery-patarimai img {
+    width: 308px;
+    height: 185px;
+    display: block;
+}
+
+.galery-patarimai h4, .galery-patarimai p {
+    padding: 1px 15px 1px;
+}
+
+.galery-patarimai p {
+    font-size: 0.9rem;
+    color: #818181;
+}
+
+.galery-patarimai h4 {
+   
+    color: #797878;
+}
+/* Partneriai */
+.partneriai {
+    margin: 10px;
+}
+
+.partneriai-slider {
+    align-items: center;
+}
+
+.partneriai img { 
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* contact */
+.contact {
+    background-color: #e4ede9;
+    color: #fff;
+}
+
+.contact .section-content {
+    width: 80%;
+    max-width: 860px;
+    margin: 20px auto
+}
+
+.contact .section-content .contact-form .input-row {
+    margin-bottom: 20px;
+}
+
+.contact .section-content .contact-form .input-row input {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 0.97rem;
+    border: none;
+    width: calc(50% - 13px);
+    color: black;
+}
+
+.contact .section-content .contact-form .input-row input:first-child {
+    margin-right: 10px;
+}
+
+.contact .section-content .contact-form .input-row input:last-child {
+    margin-left: 10px;
+}
+
+.contact .section-content .contact-form textarea {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    height: 120px;
+    padding: 10px;
+}
+
+.contact .section-content .contact-form .btn-form {
+    background-color: #30bae7;
+    border-color: #299ec5;
+}
+
+.contact .btn {
+    background-color: #00bac6;;
+    color:  #fff;
+    margin: 20px auto 0;
+    display: block;
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 4px solid #008d96;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.contact-pranesimas {
+    background-color: hsl(133, 100%, 39%);;
+    color:  #fff;
+    margin: 11px auto;
+    display: block;
+    width: 100%;
+    padding: 10px 15px;
+    border: none; 
+    position: absolute;
+    z-index: 997;
+}
+
+.btn:hover {
+    background-color: #00a5b0;;
+}
+
+/* big footer */
+.footer {
+    background-color: #514d52;
+    color: #fff;
+}
+
+.footer-content {
+    justify-content: space-between;
+    margin: 20px;
+}
+
+.footer-post {
+    max-width: 245px;
+    padding-right: 30px;
+    padding-right: 30px;
+}
+
+.footer-post i {
+    color: #0babb7;
+}
+
+.footer-post p {
+    color: #c0c0c0;
+}
+
+p .data {
+    color: #898989;
+}
+
+.footer-post a {
+    text-decoration: none;
+    color: #c0c0c0;
+}
+
+.footer-post p {
+   font-size: 0.875rem;
+}
+
+/* BOTTOM FOOTER */
+.bottom-footer {
+    background-color: #252323;
+    width: 100%;
+    display: block; 
+}
+
+.bottom-footer > .flex-container {
+    align-items: center;
+    justify-content: space-between;
+}
+
+.copyright {
+    margin: 0;
+    padding: 18px 0;
+}
+
+.copyright {
+    color: #fff;    
+}
+
+.bottom-footer .social a > i {
+    padding: 14px;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* mobilioji navigacija */
+.mobile-nav {  
+    position: relative;
+    width: 100%;
+    display: block;
+    text-align: center;
+}
+
+.mobile-nav li {
+    list-style: none;
+}
+
+.mobile-nav li a {
+    padding: 10px 16px;
+}
+
+.mobile-nav ul {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    width: 100%;
+    padding: 20px;
+    background-color: #fff;
+}
+
+#mMenu {
+    display: none;
+}
+
+/* about.php */
+.about-us {
+    padding-top: 157px;
+}
+
+.about-us-heading {
+    margin: 20px;
+}
+
+.about-us-heading > h2 {
+    font-size: 1.875rem;
+    color: #646464;
+}
+
+.about-us-heading > p {
+    font-size: 0.9rem;
+}
+
+.about-us-content {
+    padding: 20px 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.about-us-content .info {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.about-us-content .info h3 {
+    background-color: #eeeeee;
+    color: #000;
+    width: 200px;
+    height: 120px;
+    padding: 40px 20px;
+    font-weight: 100;
+}
+
+.about-us-content .info span i {
+    background-color: #3597b5;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding-top: 30px;
+    font-size: 2.5rem;
+    color: #fff;
+    margin: 0; 
+}
+
+/* RMA */
+.rma {
+    padding-top: 200px;
+    background-color: #bddbff;
+    padding-bottom: 40px;
+}
+
+.rma-heading {
+    margin: 20px;
+    text-align: center;
+}
+
+.rma-heading > h2 {
+    font-size: 1.875rem;
+    color: #646464;
+}
+
+.rma-heading > p {
+    font-size: 0.9rem;
+}
+
+.rma .rma-content {
+    width: 80%;
+    max-width: 860px; 
+    margin: 20px auto;   
+}
+
+.rma .rma-content .rma-form .rma-input {
+    margin-bottom: 20px;
+}
+
+.rma .rma-content .rma-form .rma-input input {
+    width: 100%;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    width: calc(50% - 17px);
+    color: black;
+}
+
+.rma .rma-content .rma-form .rma-input input:first-child {
+    margin-right: 10px;
+}
+
+.rma .rma-content .rma-form .rma-input input:last-child {
+    margin-right: 10px;
+}
+
+.form-btn {
+    background-color: #00bac6;;
+    color:  #fff;
+    margin: 20px auto 0;
+    display: block;
+    width: 250px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 4px solid #008d96;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.form-btn:hover {
+    background-color: #00a5b0;;
+}
+
+.rma-form {
+    padding-bottom: 30px;
+}
+
+/* RMA remonto informacija */
+.rma-info-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.rma-info {
+    padding-right: 30px;
+}
+
+.rma-info label {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.6;
+}
+
+.rma-info li {
+    list-style-type: none;
+}
+
+.rma-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+}
+
+.rma-table th {
+    text-align: left;
+    border-bottom: 1px solid rgb(170, 167, 167);
+    padding: 5px;
+}
+
+.rma-table td {
+    border-bottom: 1px solid rgb(170, 167, 167);
+    padding: 5px;
+}
+
+.rma-table tbody > tr:hover {
+    background-color: #e6eeff;
+}
+
+.rma-alert {
+    background-color: #ff4444;
+    padding: 3px;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Kontaktai.php */
+.kontaktai {
+    padding-top: 200px;
+    margin: auto 20px;
+}
+
+.kontaktai-content {
+    justify-content: space-around;
+}
+
+.kontaktai-content .map {
+    max-width: 510px;
+    width: 100% !important;
+}
+
+.kontaktai-content .map iframe{
+    border: 0;
+    width: 100%;
+    height: 440px;
+}
+
+.rekvizitai-info a {
+    text-decoration: none;
+    color: #000;
+}
+
+.map {
+    padding-left: 10px;
+}
+
+/* PRITAIKYMAS PLANSETEI */
+@media all and (max-width: 700px) {
+    .menu {
+        display: none;
+    }
+    
+    .main-nav .container i {
+        color: black;
+        padding: 20px 10px;
+        font-size: 2em;
+    }
+
+    .main-nav::after {
+        top: 152px;
+    }
+
+    .mobile-nav li a {   
+        padding: 10px 16px;
+    }
+
+    .mobile-nav li a:hover {
+        font-weight: 700;
+        background-color: rgb(233, 233, 233);
+    }
+
+    .call a {
+        font-size: 1rem; 
+        padding: 10px 10px 10px;
+        margin-top: 0px; 
+    }
+
+    .main-banner img {
+        height: 320px;
+    }
+
+    .main-banner h1 {
+        font-size: 1.6rem;
+    }
+
+    .prev, .next {
+        font-size: 2rem;
+    }
+
+    .services {
+       margin: 20px;
+    }
+
+    .section-heading > h2 {
+        font-size: 1.4rem;
+    }
+
+    .services-content .info > i {
+        font-size: 4rem;
+    }
+
+    .services-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .patarimai-heading h2 {
+        font-size: 1.4rem;
+    }
+
+    .patarimai-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact .section-content .contact-form .input-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact .section-content .contact-form .input-row input {   
+        width: 100%;
+        margin: 0px;
+    }
+
+    .contact .section-content .contact-form .input-row input:first-child {
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+    
+    .contact .section-content .contact-form .input-row input:last-child {
+        margin-left: 0px;  
+    }
+
+    .contact .section-content {
+        width: 90%;
+    }
+
+    .partneriai-slider div img {
+        margin: 0 auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .about-us-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .rma-heading > h2 {
+        font-size: 1.4rem;
+    }
+
+    .rma .rma-content .rma-form .rma-input {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .rma .rma-content .rma-form .rma-input input {
+        width: 100%;
+        margin: 0px;
+    }
+    
+    .rma .rma-content .rma-form .rma-input input:first-child {
+        margin-bottom: 10px;
+        margin-right: 0px;
+    }
+    
+    .rma .rma-content .rma-form .rma-input input:last-child {
+        margin-right: 0px;
+    }
+
+    .rma-info-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .rma-info {
+        padding-bottom: 20px;
+    }
+
+    .rma-table th {
+        text-align: center;
+    }
+
+    .kontaktai-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        margin: 10px;
+    }
+
+    .kontaktai {
+        padding-top: 150px;
+    }
+
+    .kontaktai-content .map {
+        max-width: 700px;
+        width: 100% !important;
+    }
+    
+    .kontaktai-content .map iframe{
+        width: 100%;
+    }
+
+    .map {
+        padding-left: 0px;
+    }
+}
+
+/* PRITAIKYMAS TELEFONUI */
+@media all and (max-width: 400px) {
+    .social a > i {
+        padding: 5px;
+        font-size: 25px;
+        color: #fff;
+    }
+
+    .main-banner img {
+        width: 100%;
+        height: 200px;
+        filter: brightness(50%);
+    }
+
+    .main-banner h1 {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin: 0;
+    }
+
+    .main-banner p {
+        font-size: 0.8rem;
+    }
+
+    .centered-text {  
+        top: 55%;
+    }
+
+    .prev, .next {
+        font-size: 1rem;
+    }
+
+    .partneriai-slider div img {
+       margin: 0 auto;
+    }
+
+    .bottom-footer > .flex-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .bottom-footer .social a > i {
+        padding: 0px 10px 10px 0;
+        font-size: 25px;
+    }
+
+    .copyright {
+        margin: 0;
+        padding: 0;
+    }
+}
