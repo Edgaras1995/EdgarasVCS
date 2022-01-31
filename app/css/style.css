@@ -763,7 +763,7 @@ p .data {
 }
 
 /* PRITAIKYMAS PLANSETEI */
-@media all and (max-width: 700px) {
+@media all and (max-width: 768px) {
     .menu {
         display: none;
     }
@@ -938,7 +938,7 @@ p .data {
 }
 
 /* PRITAIKYMAS TELEFONUI */
-@media all and (max-width: 400px) {
+@media all and (max-width: 390px) {
     .social a > i {
         padding: 5px;
         font-size: 25px;
